@@ -1,0 +1,36 @@
+variables:
+  WEB_BOOT_SERVER: 10.60.170.33
+
+stages:
+  - build_vue
+  - deploy_dev
+
+before_script:
+  # - bash /opt/gitlab-runner/scripts/check_env_terra_ccu_vue.sh
+  - echo "环境检查成功..."
+
+vue_dev_build:
+  stage: build_vue
+  script:
+    - echo "依赖包发生变化时，需要重新生成 yarn install => /opt/gitlab-runner/node_modules"
+    - cp -R /opt/gitlab-runner/node/ant-design-vue/node_modules node_modules
+    - ls -ld node_modules
+    - chmod +x node_modules/.bin/*
+    - yarn build
+    - sed -i s/127.0.0.1/${WEB_BOOT_SERVER}/g dist/index.html
+    - bash script/build_docker_terra_ccu_vue.sh
+  tags:
+    - test
+  only:
+    - dev
+
+deploy_dev_host:
+  stage: deploy_dev
+  script:
+    # 从docker启动
+    - cd /opt/docker
+    - docker run --publish 80:80 --name instance-terra-ccu-vue terra-ccu-vue > ./logs/docker_terra_ccu_vue.log 2>&1 &
+  tags:
+    - test
+  only:
+    - dev
