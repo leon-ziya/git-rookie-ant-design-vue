@@ -3,7 +3,6 @@ import App from './App.vue'
 import Storage from 'vue-ls'
 import router from './router'
 import store from './store/'
-
 import { VueAxios } from "@/utils/request"
 
 import Antd from 'ant-design-vue'
@@ -55,6 +54,7 @@ Vue.use(vueBus);
 Vue.use(JeecgComponents);
 Vue.use(VueAreaLinkage);
 Vue.use(dataV);
+
 
 new Vue({
   router,

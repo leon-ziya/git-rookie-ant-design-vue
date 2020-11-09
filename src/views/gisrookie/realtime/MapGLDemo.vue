@@ -13,14 +13,15 @@
     data() {
       return {
         view: null,
-        pointLayer: null
+        pointLayer: null,
       }
     },
     created() {},
     watch: {
       deep: true,
       classificationPositionMessage: function (newVal, oldVal) {
-        this.view.removeLayer(this.pointLayer);
+        //this.view.removeLayer(this.pointLayer);
+        //this.view.removeAllLayers()
         var datas = []
         var sourceJSON = JSON.stringify(newVal)
         var sourceData = JSON.parse(sourceJSON)
@@ -28,10 +29,12 @@
           var pointList = sourceData[i].points
           var data =[]
           for(var j = 0; j< pointList.length; j++){
+            var wgsX = pointList[j].longitude;
+            var wgsY = pointList[j].latitude
             var pointflage = {
               geometry: {
                 type: 'Point',
-                coordinates: [pointList[j].longitude, pointList[j].latitude]
+                coordinates: [wgsX, wgsY]
               },
               properties: {
                 cluster: 1,
@@ -64,14 +67,15 @@
         heading: 0,
         center: [104.063994, 30.626813],
         zoom: 15,
-        style: purpleStyle
+        style: whiteStyle
       })
       this.view = new mapvgl.View({
         map: map
       })
     },
     computed: {},
-    methods: {}
+    methods: {
+    }
   }
 </script>
 

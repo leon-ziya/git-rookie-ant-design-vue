@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/opt/module/node-v12/bin/node',
+1 verbose cli   '/opt/module/node-v12/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'BMap'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose npm-session 952eccd8a8e6374f
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 404 https://registry.npmjs.com/BMap 7772ms
+8 http fetch GET 404 https://registry.npmjs.com/BMap 396ms
+9 silly fetchPackageMetaData error for BMap@latest 404 Not Found - GET https://registry.npmjs.com/BMap - Not found
+10 timing stage:rollbackFailedOptional Completed in 0ms
+11 timing stage:runTopLevelLifecycles Completed in 9533ms
+12 verbose stack Error: 404 Not Found - GET https://registry.npmjs.com/BMap - Not found
+12 verbose stack     at /opt/module/node-v12/lib/node_modules/npm/node_modules/npm-registry-fetch/check-response.js:104:15
+12 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+13 verbose statusCode 404
+14 verbose pkgid BMap@latest
+15 verbose cwd /home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue
+16 verbose Linux 5.4.0-52-generic
+17 verbose argv "/opt/module/node-v12/bin/node" "/opt/module/node-v12/bin/npm" "install" "--save" "BMap"
+18 verbose node v12.18.2
+19 verbose npm  v6.14.5
+20 error code E404
+21 error 404 Not Found - GET https://registry.npmjs.com/BMap - Not found
+22 error 404
+23 error 404 'BMap@latest' is not in the npm registry.
+24 error 404 Your package name is not valid, because
+25 error 404 1. name can no longer contain capital letters
+26 error 404 Note that you can also install from a
+27 error 404 tarball, folder, http url, or git url.
+28 verbose exit [ 1, true ]

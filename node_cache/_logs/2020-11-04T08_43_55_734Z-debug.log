@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/opt/module/node-v12/bin/node',
+1 verbose cli   '/opt/module/node-v12/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'mapvgl',
+1 verbose cli   '--save'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose npm-session 03ac8037f03803e4
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData error for mapvgl@file:node_modules/mapvgl ELOOP: too many symbolic links encountered, open '/home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue/node_modules/mapvgl/package.json'
+8 timing stage:rollbackFailedOptional Completed in 0ms
+9 timing stage:runTopLevelLifecycles Completed in 1193ms
+10 verbose stack Error: ELOOP: too many symbolic links encountered, open '/home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue/node_modules/mapvgl/package.json'
+11 verbose cwd /home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue
+12 verbose Linux 5.4.0-52-generic
+13 verbose argv "/opt/module/node-v12/bin/node" "/opt/module/node-v12/bin/npm" "install" "mapvgl" "--save"
+14 verbose node v12.18.2
+15 verbose npm  v6.14.5
+16 error code ELOOP
+17 error syscall open
+18 error path /home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue/node_modules/mapvgl/package.json
+19 error errno -40
+20 error ELOOP: too many symbolic links encountered, open '/home/jianglai/IdeaProjects/gisRookie/gis-rookie-ant-design-vue/node_modules/mapvgl/package.json'
+21 verbose exit [ -40, true ]
